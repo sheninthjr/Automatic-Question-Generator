@@ -40,4 +40,3 @@ To develop all apps and packages, run the following command:
 ```
 cd Automatic-Question-Generator
 yarn dev
-```
