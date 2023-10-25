@@ -1,7 +1,6 @@
 # Automatic Question Paper Generator
  
 This is an Turborepo project.
-]
 
 ## What's inside?
 
@@ -43,11 +42,3 @@ cd Automatic-Question-Generator
 yarn dev
 ```
 
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
