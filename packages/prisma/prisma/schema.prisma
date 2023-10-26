@@ -1,0 +1,72 @@
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User{
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String
+  password String
+}
+
+model Unit1{
+  unitId Int @id @default(autoincrement())
+  parta1 String @unique 
+  parta2 String @unique
+  partb1 String @unique
+  partb2 String @unique
+  partc1 String @unique
+  partc2 String @unique
+}
+
+
+model Unit2{
+  unitId Int @id @default(autoincrement())
+  parta1 String @unique
+  parta2 String @unique
+  partb1 String @unique
+  partb2 String @unique
+  partc1 String @unique
+  partc2 String @unique
+}
+
+
+model Unit3{
+  unitId Int @id @default(autoincrement())
+  parta1 String @unique
+  parta2 String @unique
+  partb1 String @unique
+  partb2 String @unique
+  partc1 String @unique
+  partc2 String @unique
+}
+
+
+model Unit4{
+  unitId Int @id @default(autoincrement())
+  parta1 String @unique
+  parta2 String @unique
+  partb1 String @unique
+  partb2 String @unique
+  partc1 String @unique
+  partc2 String @unique
+}
+
+
+model Unit5{
+  unitId Int @id @default(autoincrement())
+  parta1 String @unique
+  parta2 String @unique
+  partb1 String @unique
+  partb2 String @unique
+  partc1 String @unique
+  partc2 String @unique
+}
+
