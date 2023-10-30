@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, QType } from "@prisma/client";
 
 const prisma = new PrismaClient();
 const app = express();
@@ -17,7 +17,7 @@ const unit: { [key: string]: any } = {
 
 
 app.post("/post/:unit", async (req, res) => {
-  const { parta1, parta2, partb1, partb2, partc1, partc2 } = req.body;
+  const { parta1, parta2, partb1, partb2, partc1, partc2,qtype } = req.body;
   const unitNo = req.params.unit;
   const unitQuestion = await unit[unitNo].create({
     data: {
@@ -27,6 +27,7 @@ app.post("/post/:unit", async (req, res) => {
       partb2: partb2,
       partc1: partc1,
       partc2: partc2,
+      qtype : qtype
     },
   });
   res.json(unitQuestion);

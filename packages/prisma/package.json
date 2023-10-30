@@ -6,7 +6,7 @@
   "types": "./index.ts",
   "scripts": {
     "clean": "rm -rf .turbo && rm -rf node_modules",
-    "db-migrate": "yarn prisma migrate dev --name init",
+    "db-migrate": "yarn prisma migrate dev",
     "lint": "prisma validate",
     "prisma:studio": "prisma studio",
     "prisma:generate": "prisma generate",
