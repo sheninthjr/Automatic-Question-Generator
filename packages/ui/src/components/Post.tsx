@@ -20,7 +20,7 @@ export function Post(props: {
   const [qtype, setQType] = useState("Understand");
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 p-5">
       <div>
         <input
           className="w-full h-10 text-lg bg-gray-50 rounded-lg p-6 border-2 border-red-200 hover:border-blue-500 focus:outline-none focus:shadow-outline"

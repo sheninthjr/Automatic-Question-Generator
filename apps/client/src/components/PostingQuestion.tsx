@@ -6,14 +6,14 @@ export default function PostingQuestion() {
   return (
     <>
       <Post
-        onClick={async (
-          parta1,
-          parta2,
-          partb1,
-          partb2,
-          partc1,
-          partc2,
-          qtype
+        onClick={async(
+          parta1:string,
+          parta2:string,
+          partb1:string,
+          partb2:string,
+          partc1:string,
+          partc2:string,
+          qtype:string
         ) => {
           const allQuestion = {
             parta1,
