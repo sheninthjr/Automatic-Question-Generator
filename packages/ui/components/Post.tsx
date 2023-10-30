@@ -1,7 +1,16 @@
-import axios from "axios";
 import { useState } from "react";
 
-export default function Post() {
+export function Post(props: {
+  onClick: (
+    parta1: string,
+    parta2: string,
+    partb1: string,
+    partb2: string,
+    partc1: string,
+    partc2: string,
+    qtype: string
+  ) => void;
+}) {
   const [parta1, setParta1] = useState("");
   const [parta2, setParta2] = useState("");
   const [partb1, setPartb1] = useState("");
@@ -9,18 +18,7 @@ export default function Post() {
   const [partc1, setPartc1] = useState("");
   const [partc2, setPartc2] = useState("");
   const [qtype, setQType] = useState("Understand");
-  const addQuestion = async () => {
-    const res = await axios.post("http://localhost:3000/post/3", {
-      parta1,
-      parta2,
-      partb1,
-      partb2,
-      partc1,
-      partc2,
-      qtype,
-    });
-    console.log(res.data);
-  };
+
   return (
     <div className="space-y-4">
       <div>
@@ -93,7 +91,9 @@ export default function Post() {
       <button
         type="submit"
         className=" flex justify-center items-center align w-full h-10 text-lg bg-gray-50 rounded-lg p-6 border-2 border-red-200 hover:border-blue-500 focus:outline-none focus:shadow-outline"
-        onClick={addQuestion}
+        onClick={async () => {
+          props.onClick(parta1, parta2, partb1, partb2, partc1, partc2, qtype);
+        }}
       >
         Submit
       </button>
