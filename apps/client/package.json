@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@prisma/client": "^5.5.2",
+    "axios": "^1.6.0",
+    "database": "*",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "database": "*"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
