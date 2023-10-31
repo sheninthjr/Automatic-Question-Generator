@@ -1,3 +1,6 @@
+-- CreateEnum
+CREATE TYPE "QType" AS ENUM ('Understand', 'Analyze');
+
 -- CreateTable
 CREATE TABLE "User" (
     "id" SERIAL NOT NULL,
@@ -17,6 +20,7 @@ CREATE TABLE "Unit1" (
     "partb2" TEXT NOT NULL,
     "partc1" TEXT NOT NULL,
     "partc2" TEXT NOT NULL,
+    "qtype" "QType" NOT NULL,
 
     CONSTRAINT "Unit1_pkey" PRIMARY KEY ("unitId")
 );
@@ -30,6 +34,7 @@ CREATE TABLE "Unit2" (
     "partb2" TEXT NOT NULL,
     "partc1" TEXT NOT NULL,
     "partc2" TEXT NOT NULL,
+    "qtype" "QType" NOT NULL,
 
     CONSTRAINT "Unit2_pkey" PRIMARY KEY ("unitId")
 );
@@ -43,6 +48,7 @@ CREATE TABLE "Unit3" (
     "partb2" TEXT NOT NULL,
     "partc1" TEXT NOT NULL,
     "partc2" TEXT NOT NULL,
+    "qtype" "QType" NOT NULL,
 
     CONSTRAINT "Unit3_pkey" PRIMARY KEY ("unitId")
 );
@@ -56,6 +62,7 @@ CREATE TABLE "Unit4" (
     "partb2" TEXT NOT NULL,
     "partc1" TEXT NOT NULL,
     "partc2" TEXT NOT NULL,
+    "qtype" "QType" NOT NULL,
 
     CONSTRAINT "Unit4_pkey" PRIMARY KEY ("unitId")
 );
@@ -69,6 +76,7 @@ CREATE TABLE "Unit5" (
     "partb2" TEXT NOT NULL,
     "partc1" TEXT NOT NULL,
     "partc2" TEXT NOT NULL,
+    "qtype" "QType" NOT NULL,
 
     CONSTRAINT "Unit5_pkey" PRIMARY KEY ("unitId")
 );

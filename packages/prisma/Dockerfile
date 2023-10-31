@@ -2,8 +2,8 @@ FROM node:14
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
-COPY tsconfig.json ./
+COPY package*.json /app
+COPY tsconfig.json /app
 RUN yarn install
 
 COPY . .
