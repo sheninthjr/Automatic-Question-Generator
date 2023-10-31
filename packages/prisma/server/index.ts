@@ -15,25 +15,58 @@ const unit: { [key: string]: any } = {
   "5": prisma.unit5,
 };
 
+app.get("/hi",async(req,res)=>(
+  res.send("hi there")
+))
 
 app.post("/post/:unit", async (req, res) => {
-  const { parta1, parta2, partb1, partb2, partc1, partc2,qtype } = req.body;
+  const {
+    parta1,
+    parta1qtype,
+    parta1co,
+    parta2,
+    parta2qtype,
+    parta2co,
+    partb1,
+    partb1qtype,
+    partb1co,
+    partb2,
+    partb2qtype,
+    partb2co,
+    partc1,
+    partc1qtype,
+    partc1co,
+    partc2,
+    partc2co,
+    partc2qtype,
+  } = req.body;
   const unitNo = req.params.unit;
   const unitQuestion = await unit[unitNo].create({
     data: {
       parta1: parta1,
+      parta1qtype: parta1qtype,
+      parta1co: parta1co,
       parta2: parta2,
+      parta2qtype: parta2qtype,
+      parta2co: parta2co,
       partb1: partb1,
+      partb1qtype: partb1qtype,
+      partb1co: partb1co,
       partb2: partb2,
+      partb2qtype: partb2qtype,
+      partb2co: partb2co,
       partc1: partc1,
+      partc1qtype: partc1qtype,
+      partc1co: partc1co,
       partc2: partc2,
-      qtype : qtype
+      partc2qtype: partc2qtype,
+      partc2co: partc2co,
     },
   });
   res.json(unitQuestion);
 });
 
-app.get("/get/:testtype",async (req,res)=> {
+app.get("/get/:testtype", async (req, res) => {
   const testType = req.params.testtype;
   if (testType === "IA1") {
     const partA11Questions = await prisma.unit1.findMany({
@@ -57,26 +90,34 @@ app.get("/get/:testtype",async (req,res)=> {
     const partB11Questions = await prisma.unit1.findMany({
       select: {
         partb1: true,
-        partb2: true
+        partb2: true,
       },
       take: 1,
     });
     const partB21Questions = await prisma.unit2.findMany({
       select: {
-        partb1: true
+        partb1: true,
       },
       take: 1,
     });
     const partC1Questions = await prisma.unit1.findMany({
       select: {
-        partc1: true
+        partc1: true,
       },
       take: 1,
     });
-    res.json({Questions:{partA11Questions,partA12Questions,partA21Questions,partB11Questions,partB21Questions,partC1Questions}});
+    res.json({
+      Questions: {
+        partA11Questions,
+        partA12Questions,
+        partA21Questions,
+        partB11Questions,
+        partB21Questions,
+        partC1Questions,
+      },
+    });
   }
-})
-
+});
 
 const server = app.listen(3000, () => {
   console.log("Server is listenning on port 3000");

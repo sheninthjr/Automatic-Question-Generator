@@ -1,5 +1,8 @@
 -- CreateEnum
-CREATE TYPE "QType" AS ENUM ('Understand', 'Analyze');
+CREATE TYPE "QType" AS ENUM ('Remember', 'Understand', 'Analyze', 'Apply', 'Create');
+
+-- CreateEnum
+CREATE TYPE "CO" AS ENUM ('CO1', 'CO2', 'CO3', 'CO4', 'CO5');
 
 -- CreateTable
 CREATE TABLE "User" (
@@ -15,12 +18,23 @@ CREATE TABLE "User" (
 CREATE TABLE "Unit1" (
     "unitId" SERIAL NOT NULL,
     "parta1" TEXT NOT NULL,
+    "parta1qtype" "QType" NOT NULL,
+    "parta1co" "CO" NOT NULL,
     "parta2" TEXT NOT NULL,
+    "parta2qtype" "QType" NOT NULL,
+    "parta2co" "CO" NOT NULL,
     "partb1" TEXT NOT NULL,
+    "partb1qtype" "QType" NOT NULL,
+    "partb1co" "CO" NOT NULL,
     "partb2" TEXT NOT NULL,
+    "partb2qtype" "QType" NOT NULL,
+    "partb2co" "CO" NOT NULL,
     "partc1" TEXT NOT NULL,
+    "partc1qtype" "QType" NOT NULL,
+    "partc1co" "CO" NOT NULL,
     "partc2" TEXT NOT NULL,
-    "qtype" "QType" NOT NULL,
+    "partc2qtype" "QType" NOT NULL,
+    "partc2co" "CO" NOT NULL,
 
     CONSTRAINT "Unit1_pkey" PRIMARY KEY ("unitId")
 );
@@ -29,12 +43,23 @@ CREATE TABLE "Unit1" (
 CREATE TABLE "Unit2" (
     "unitId" SERIAL NOT NULL,
     "parta1" TEXT NOT NULL,
+    "parta1qtype" "QType" NOT NULL,
+    "parta1co" "CO" NOT NULL,
     "parta2" TEXT NOT NULL,
+    "parta2qtype" "QType" NOT NULL,
+    "parta2co" "CO" NOT NULL,
     "partb1" TEXT NOT NULL,
+    "partb1qtype" "QType" NOT NULL,
+    "partb1co" "CO" NOT NULL,
     "partb2" TEXT NOT NULL,
+    "partb2qtype" "QType" NOT NULL,
+    "partb2co" "CO" NOT NULL,
     "partc1" TEXT NOT NULL,
+    "partc1qtype" "QType" NOT NULL,
+    "partc1co" "CO" NOT NULL,
     "partc2" TEXT NOT NULL,
-    "qtype" "QType" NOT NULL,
+    "partc2qtype" "QType" NOT NULL,
+    "partc2co" "CO" NOT NULL,
 
     CONSTRAINT "Unit2_pkey" PRIMARY KEY ("unitId")
 );
@@ -43,12 +68,23 @@ CREATE TABLE "Unit2" (
 CREATE TABLE "Unit3" (
     "unitId" SERIAL NOT NULL,
     "parta1" TEXT NOT NULL,
+    "parta1qtype" "QType" NOT NULL,
+    "parta1co" "CO" NOT NULL,
     "parta2" TEXT NOT NULL,
+    "parta2qtype" "QType" NOT NULL,
+    "parta2co" "CO" NOT NULL,
     "partb1" TEXT NOT NULL,
+    "partb1qtype" "QType" NOT NULL,
+    "partb1co" "CO" NOT NULL,
     "partb2" TEXT NOT NULL,
+    "partb2qtype" "QType" NOT NULL,
+    "partb2co" "CO" NOT NULL,
     "partc1" TEXT NOT NULL,
+    "partc1qtype" "QType" NOT NULL,
+    "partc1co" "CO" NOT NULL,
     "partc2" TEXT NOT NULL,
-    "qtype" "QType" NOT NULL,
+    "partc2qtype" "QType" NOT NULL,
+    "partc2co" "CO" NOT NULL,
 
     CONSTRAINT "Unit3_pkey" PRIMARY KEY ("unitId")
 );
@@ -57,12 +93,23 @@ CREATE TABLE "Unit3" (
 CREATE TABLE "Unit4" (
     "unitId" SERIAL NOT NULL,
     "parta1" TEXT NOT NULL,
+    "parta1qtype" "QType" NOT NULL,
+    "parta1co" "CO" NOT NULL,
     "parta2" TEXT NOT NULL,
+    "parta2qtype" "QType" NOT NULL,
+    "parta2co" "CO" NOT NULL,
     "partb1" TEXT NOT NULL,
+    "partb1qtype" "QType" NOT NULL,
+    "partb1co" "CO" NOT NULL,
     "partb2" TEXT NOT NULL,
+    "partb2qtype" "QType" NOT NULL,
+    "partb2co" "CO" NOT NULL,
     "partc1" TEXT NOT NULL,
+    "partc1qtype" "QType" NOT NULL,
+    "partc1co" "CO" NOT NULL,
     "partc2" TEXT NOT NULL,
-    "qtype" "QType" NOT NULL,
+    "partc2qtype" "QType" NOT NULL,
+    "partc2co" "CO" NOT NULL,
 
     CONSTRAINT "Unit4_pkey" PRIMARY KEY ("unitId")
 );
@@ -71,12 +118,23 @@ CREATE TABLE "Unit4" (
 CREATE TABLE "Unit5" (
     "unitId" SERIAL NOT NULL,
     "parta1" TEXT NOT NULL,
+    "parta1qtype" "QType" NOT NULL,
+    "parta1co" "CO" NOT NULL,
     "parta2" TEXT NOT NULL,
+    "parta2qtype" "QType" NOT NULL,
+    "parta2co" "CO" NOT NULL,
     "partb1" TEXT NOT NULL,
+    "partb1qtype" "QType" NOT NULL,
+    "partb1co" "CO" NOT NULL,
     "partb2" TEXT NOT NULL,
+    "partb2qtype" "QType" NOT NULL,
+    "partb2co" "CO" NOT NULL,
     "partc1" TEXT NOT NULL,
+    "partc1qtype" "QType" NOT NULL,
+    "partc1co" "CO" NOT NULL,
     "partc2" TEXT NOT NULL,
-    "qtype" "QType" NOT NULL,
+    "partc2qtype" "QType" NOT NULL,
+    "partc2co" "CO" NOT NULL,
 
     CONSTRAINT "Unit5_pkey" PRIMARY KEY ("unitId")
 );

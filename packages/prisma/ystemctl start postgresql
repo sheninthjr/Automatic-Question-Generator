@@ -1,0 +1,11 @@
+○ postgresql.service - PostgreSQL RDBMS
+     Loaded: loaded (/lib/systemd/system/postgresql.service; enabled; vendor preset: enabled)
+     Active: inactive (dead) since Wed 2023-11-01 03:06:49 IST; 17min ago
+    Process: 1405 ExecStart=/bin/true (code=exited, status=0/SUCCESS)
+   Main PID: 1405 (code=exited, status=0/SUCCESS)
+        CPU: 2ms
+
+Oct 31 20:26:19 Sheninth systemd[1]: Starting PostgreSQL RDBMS...
+Oct 31 20:26:19 Sheninth systemd[1]: Finished PostgreSQL RDBMS.
+Nov 01 03:06:49 Sheninth systemd[1]: postgresql.service: Deactivated successfully.
+Nov 01 03:06:49 Sheninth systemd[1]: Stopped PostgreSQL RDBMS.

@@ -1,12 +1,12 @@
 
 import './App.css'
-import Landing from './components/Landing'
+import PostingQuestion from './components/PostingQuestion'
 
 function App() {
 
   return (
     <>
-    <Landing/>
+    <PostingQuestion/>
     </>
   )
 }
