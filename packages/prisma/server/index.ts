@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { PrismaClient, QType } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 const app = express();
