@@ -46,10 +46,12 @@ export default function PostingQuestion() {
             partc2qtype,
             partc2co,
           };
-          const res = await axios.post(`${BASE_URL}/post/3`, {
-            allQuestion,
+          console.log(allQuestion);
+          const res = await axios.post(`${BASE_URL}/post/5`, allQuestion, {
+            headers: { "Content-Type": "application/json" },
           });
-          console.log(res.data);
+          const data = res.data;
+          console.log(data);
         }}
       />
     </>

@@ -1,9 +1,9 @@
-FROM node:18
+FROM node:16
 
-
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY package*.json ./
+COPY prisma ./prisma/
 COPY tsconfig.json ./
 
 RUN yarn install
@@ -12,6 +12,6 @@ COPY . .
 
 RUN yarn build
 
-CMD ["yarn", "start"]
-
 EXPOSE 3000
+
+CMD ["yarn", "start"]

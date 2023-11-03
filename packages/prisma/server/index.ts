@@ -15,11 +15,10 @@ const unit: { [key: string]: any } = {
   "5": prisma.unit5,
 };
 
-app.get("/hi",async(req,res)=>(
-  res.send("hi there")
-))
+app.get("/hi", async (req, res) => res.send("hi there"));
 
 app.post("/post/:unit", async (req, res) => {
+  console.log(process.env.DATABASE_URL);
   const {
     parta1,
     parta1qtype,
@@ -37,33 +36,37 @@ app.post("/post/:unit", async (req, res) => {
     partc1qtype,
     partc1co,
     partc2,
-    partc2co,
     partc2qtype,
+    partc2co,
   } = req.body;
   const unitNo = req.params.unit;
-  const unitQuestion = await unit[unitNo].create({
-    data: {
-      parta1: parta1,
-      parta1qtype: parta1qtype,
-      parta1co: parta1co,
-      parta2: parta2,
-      parta2qtype: parta2qtype,
-      parta2co: parta2co,
-      partb1: partb1,
-      partb1qtype: partb1qtype,
-      partb1co: partb1co,
-      partb2: partb2,
-      partb2qtype: partb2qtype,
-      partb2co: partb2co,
-      partc1: partc1,
-      partc1qtype: partc1qtype,
-      partc1co: partc1co,
-      partc2: partc2,
-      partc2qtype: partc2qtype,
-      partc2co: partc2co,
-    },
-  });
-  res.json(unitQuestion);
+  try {
+    const unitQuestion = await unit[unitNo].create({
+      data: {
+        parta1,
+        parta1qtype,
+        parta1co,
+        parta2,
+        parta2qtype,
+        parta2co,
+        partb1,
+        partb1qtype,
+        partb1co,
+        partb2,
+        partb2qtype,
+        partb2co,
+        partc1,
+        partc1qtype,
+        partc1co,
+        partc2,
+        partc2qtype,
+        partc2co,
+      },
+    });
+    res.json(unitQuestion);
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
 });
 
 app.get("/get/:testtype", async (req, res) => {

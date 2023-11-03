@@ -1,20 +1,17 @@
 version: "3.6"
 services:
-  my-app:
-    build: 
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
   postgres:
     container_name: postgres
     image: postgres:13
+    restart: always
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=mydb
     ports:
-      - 5432:5432
+      - 5431:5432
+    env_file:
+      - .env
     volumes:
       - postgres_data:/var/lib/postgresql/data/
 volumes:

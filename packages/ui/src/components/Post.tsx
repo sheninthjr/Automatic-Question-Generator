@@ -24,22 +24,22 @@ export function Post(props: {
 }) {
   const [parta1, setParta1] = useState("");
   const [parta1qtype, setParta1qtype] = useState("Understand");
-  const [parta1co, setParta1co] = useState("");
+  const [parta1co, setParta1co] = useState("CO1");
   const [parta2, setParta2] = useState("");
   const [parta2qtype, setParta2qtype] = useState("Understand");
-  const [parta2co, setParta2co] = useState("");
+  const [parta2co, setParta2co] = useState("CO1");
   const [partb1, setPartb1] = useState("");
   const [partb1qtype, setPartb1qtype] = useState("Understand");
-  const [partb1co, setPartb1co] = useState("");
+  const [partb1co, setPartb1co] = useState("CO1");
   const [partb2, setPartb2] = useState("");
   const [partb2qtype, setPartb2qtype] = useState("Understand");
-  const [partb2co, setPartb2co] = useState("");
+  const [partb2co, setPartb2co] = useState("CO1");
   const [partc1, setPartc1] = useState("");
   const [partc1qtype, setPartc1qtype] = useState("Understand");
-  const [partc1co, setPartc1co] = useState("");
+  const [partc1co, setPartc1co] = useState("CO1");
   const [partc2, setPartc2] = useState("");
   const [partc2qtype, setPartc2qtype] = useState("Understand");
-  const [partc2co, setPartc2co] = useState("");
+  const [partc2co, setPartc2co] = useState("CO1");
 
   return (
     <div className="space-y-4 p-5">
