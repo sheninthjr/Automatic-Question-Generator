@@ -30,7 +30,7 @@ export default function GetQuestion() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center p-40">
+    <div className="flex flex-col justify-center items-center p-40 bg-gray-700">
       <div className="flex flex-col justify-between space-y-5 p-4 border-4 h-[30vh] bg-blue-300 border-blue-300">
         <input
           className="rounded-lg w-1/25 h-15 p-4"

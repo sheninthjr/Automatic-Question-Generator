@@ -70,8 +70,16 @@ app.post("/post/:unit", async (req, res) => {
   }
 });
 
+
 app.get("/get/:testtype", async (req, res) => {
   const testType = req.params.testtype;
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear() % 100;
+  const currentMonth = currentDate.getMonth() + 1;
+  const currentDay = currentDate.getDate();
+  const formattedMonth = currentMonth < 10 ? `0${currentMonth}` : currentMonth;
+  const formattedDay = currentDay < 10 ? `0${currentDay}` : currentDay;
+  const formattedDate = `${formattedDay}.${formattedMonth}.${currentYear}`;
   try {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
@@ -90,58 +98,57 @@ app.get("/get/:testtype", async (req, res) => {
         skip: Math.floor(Math.random() * skipNo),
         select: {
           parta2: true,
-          parta2qtype:true,
-          parta2co:true
+          parta2qtype: true,
+          parta2co: true,
         },
         take: 1,
       });
       const partA21Questions = await prisma.unit2.findMany({
-        skip:Math.floor(Math.random() * skipNo),
+        skip: Math.floor(Math.random() * skipNo),
         select: {
           parta1: true,
-          parta1qtype:true,
-          parta1co:true
+          parta1qtype: true,
+          parta1co: true,
         },
         take: 2,
       });
       const partB11Questions = await prisma.unit1.findMany({
-        skip:Math.floor(Math.random() * skipNo),
+        skip: Math.floor(Math.random() * skipNo),
         select: {
           partb1: true,
-          partb1qtype:true,
-          partb1co:true
+          partb1qtype: true,
+          partb1co: true,
         },
         take: 1,
       });
       const partB12Questions = await prisma.unit1.findMany({
-        skip:Math.floor(Math.random() * skipNo),
+        skip: Math.floor(Math.random() * skipNo),
         select: {
           partb2: true,
-          partb2qtype:true,
-          partb2co:true
+          partb2qtype: true,
+          partb2co: true,
         },
         take: 1,
       });
       const partB21Questions = await prisma.unit2.findMany({
-        skip:Math.floor(Math.random() * skipNo),
+        skip: Math.floor(Math.random() * skipNo),
         select: {
           partb1: true,
-          partb1qtype:true,
-          partb1co:true
+          partb1qtype: true,
+          partb1co: true,
         },
         take: 1,
       });
       const partC1Questions = await prisma.unit1.findMany({
-        skip:Math.floor(Math.random() * skipNo),
+        skip: Math.floor(Math.random() * skipNo),
         select: {
           partc1: true,
-          partc1qtype:true,
-          partc1co:true
+          partc1qtype: true,
+          partc1co: true,
         },
         take: 1,
       });
       const data = {
-        Questions: {
           partA11Questions,
           partA12Questions,
           partA21Questions,
@@ -149,20 +156,107 @@ app.get("/get/:testtype", async (req, res) => {
           partB12Questions,
           partB21Questions,
           partC1Questions,
-        },
+          currentDate:formattedDate
       };
-      const htmlData = partA11Questions.map((question) => question.parta1);
-      const htmlContent = `<html>
-    <head>
-      <title>Part A11 Questions</title>
-    </head>
-    <body>
-      <h1>Part A11 Questions</h1>
-      <ol>
-        ${htmlData.map((question) => `<li>${question}</li>`).join("")}
-      </ol>
-    </body>
-  </html>`;
+      const htmlDataParta1 = partA11Questions.map((q) => q.parta1);
+      const htmlDataParta1Qtype = partA11Questions.map((q) => q.parta1qtype);
+      const htmlDataParta1Co = partA11Questions.map((q) => q.parta1co);
+      const htmlDataParta11 = partA12Questions.map((q) => q.parta2);
+      const htmlDataParta11Qtype = partA12Questions.map((q) => q.parta2qtype);
+      const htmlDataParta11Co = partA12Questions.map((q) => q.parta2co);
+      const htmlDataParta2 = partA21Questions.map((q) => q.parta1);
+      const htmlDataParta2Qtype = partA21Questions.map((q) => q.parta1qtype);
+      const htmlDataParta2Co = partA21Questions.map((q) => q.parta1co);
+      const htmlContent = `
+      <html>
+        <head>
+          <title>Questions</title>
+          <style>
+            h3 {
+              margin: 5px 0;
+            }
+            li {
+              font-size: 17px;
+              width: 70%; 
+            }
+            strong {
+              font-size: 17px;
+            }
+            .metadata {
+              width: 30%; 
+              display: flex;
+              justify-content: space-between;
+            }
+          </style>
+        </head>
+        <body>
+        <div style="text-align: center">
+        <div>
+          <h3>Velammal Institute of technology</h3>
+        </div>
+        <div>
+          <h3>Dept of AI&DS/${testType}/III Year/V Sem/${formattedDate}/1.45hr/60Marks/Set B</h3>
+        </div>
+        <div>
+          <h3>CCS334-BIG DATA ANALYTICS</h3>
+        </div>
+        <div>
+          <h3>PART-A (5*2=10 Marks)</h3>
+        </div>
+        </div>
+          <ol>
+            ${htmlDataParta1
+              .map(
+                (question, index) => `
+              <div style="display: flex; justify-content: space-between">
+                <li>
+                  <strong>${question}</strong>
+                </li>
+                <div class="metadata">
+                  <strong>02M</strong>
+                  <strong style="margin-left: 10px">${htmlDataParta1Qtype[index]}</strong>
+                  <strong style="margin-left: 10px">(${htmlDataParta1Co[index]})</strong>
+                </div>
+              </div>
+              `
+              )
+              .join("")}
+              ${htmlDataParta11
+                .map(
+                  (question, index) => `
+              <div style="display: flex; justify-content: space-between">
+                <li>
+                  <strong>${question}</strong>
+                </li>
+                <div class="metadata">
+                  <strong>02M</strong>
+                  <strong style="margin-left: 10px">${htmlDataParta11Qtype[index]}</strong>
+                  <strong style="margin-left: 10px">(${htmlDataParta11Co[index]})</strong>
+                </div>
+              </div>
+            `
+                )
+                .join("")}
+            ${htmlDataParta2
+              .map(
+                (question, index) => `
+              <div style="display: flex; justify-content: space-between">
+                <li>
+                  <strong>${question}</strong>
+                </li>
+                <div class="metadata">
+                  <strong>02M</strong>
+                  <strong style="margin-left: 10px">${htmlDataParta2Qtype[index]}</strong>
+                  <strong style="margin-left: 10px">(${htmlDataParta2Co[index]})</strong>
+                </div>
+              </div>
+            `
+              )
+              .join("")}
+          </ol>
+        </body>
+      </html>`;
+
       await page.setContent(htmlContent);
       const pdfBuffer = await page.pdf({ format: "A4" });
       res.setHeader("Content-Type", "application/pdf");
@@ -173,7 +267,8 @@ app.get("/get/:testtype", async (req, res) => {
       res.send(pdfBuffer);
       await browser.close();
     }
-  } catch (error) {
+  }
+   catch (error) {
     console.error("Error generating PDF:", error);
     res.status(500).send("Error generating PDF");
   }
