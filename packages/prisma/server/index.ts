@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { PrismaClient } from "@prisma/client";
+import puppeteer from "puppeteer";
 
 const prisma = new PrismaClient();
 const app = express();
@@ -71,54 +72,110 @@ app.post("/post/:unit", async (req, res) => {
 
 app.get("/get/:testtype", async (req, res) => {
   const testType = req.params.testtype;
-  if (testType === "IA1") {
-    const partA11Questions = await prisma.unit1.findMany({
-      select: {
-        parta1: true,
-      },
-      take: 2,
-    });
-    const partA12Questions = await prisma.unit1.findMany({
-      select: {
-        parta2: true,
-      },
-      take: 1,
-    });
-    const partA21Questions = await prisma.unit2.findMany({
-      select: {
-        parta1: true,
-      },
-      take: 2,
-    });
-    const partB11Questions = await prisma.unit1.findMany({
-      select: {
-        partb1: true,
-        partb2: true,
-      },
-      take: 1,
-    });
-    const partB21Questions = await prisma.unit2.findMany({
-      select: {
-        partb1: true,
-      },
-      take: 1,
-    });
-    const partC1Questions = await prisma.unit1.findMany({
-      select: {
-        partc1: true,
-      },
-      take: 1,
-    });
-    res.json({
-      Questions: {
-        partA11Questions,
-        partA12Questions,
-        partA21Questions,
-        partB11Questions,
-        partB21Questions,
-        partC1Questions,
-      },
-    });
+  try {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    if (testType === "IA1") {
+      const skipNo = 3;
+      const partA11Questions = await prisma.unit1.findMany({
+        skip: Math.floor(Math.random() * skipNo),
+        select: {
+          parta1: true,
+          parta1qtype: true,
+          parta1co: true,
+        },
+        take: 2,
+      });
+      const partA12Questions = await prisma.unit1.findMany({
+        skip: Math.floor(Math.random() * skipNo),
+        select: {
+          parta2: true,
+          parta2qtype:true,
+          parta2co:true
+        },
+        take: 1,
+      });
+      const partA21Questions = await prisma.unit2.findMany({
+        skip:Math.floor(Math.random() * skipNo),
+        select: {
+          parta1: true,
+          parta1qtype:true,
+          parta1co:true
+        },
+        take: 2,
+      });
+      const partB11Questions = await prisma.unit1.findMany({
+        skip:Math.floor(Math.random() * skipNo),
+        select: {
+          partb1: true,
+          partb1qtype:true,
+          partb1co:true
+        },
+        take: 1,
+      });
+      const partB12Questions = await prisma.unit1.findMany({
+        skip:Math.floor(Math.random() * skipNo),
+        select: {
+          partb2: true,
+          partb2qtype:true,
+          partb2co:true
+        },
+        take: 1,
+      });
+      const partB21Questions = await prisma.unit2.findMany({
+        skip:Math.floor(Math.random() * skipNo),
+        select: {
+          partb1: true,
+          partb1qtype:true,
+          partb1co:true
+        },
+        take: 1,
+      });
+      const partC1Questions = await prisma.unit1.findMany({
+        skip:Math.floor(Math.random() * skipNo),
+        select: {
+          partc1: true,
+          partc1qtype:true,
+          partc1co:true
+        },
+        take: 1,
+      });
+      const data = {
+        Questions: {
+          partA11Questions,
+          partA12Questions,
+          partA21Questions,
+          partB11Questions,
+          partB12Questions,
+          partB21Questions,
+          partC1Questions,
+        },
+      };
+      const htmlData = partA11Questions.map((question) => question.parta1);
+      const htmlContent = `<html>
+    <head>
+      <title>Part A11 Questions</title>
+    </head>
+    <body>
+      <h1>Part A11 Questions</h1>
+      <ol>
+        ${htmlData.map((question) => `<li>${question}</li>`).join("")}
+      </ol>
+    </body>
+  </html>`;
+      await page.setContent(htmlContent);
+      const pdfBuffer = await page.pdf({ format: "A4" });
+      res.setHeader("Content-Type", "application/pdf");
+      res.setHeader(
+        "Content-Disposition",
+        'attachment; filename="example.pdf"'
+      );
+      res.send(pdfBuffer);
+      await browser.close();
+    }
+  } catch (error) {
+    console.error("Error generating PDF:", error);
+    res.status(500).send("Error generating PDF");
   }
 });
 

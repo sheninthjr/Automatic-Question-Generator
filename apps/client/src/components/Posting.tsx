@@ -47,7 +47,7 @@ export default function PostingQuestion() {
             partc2co,
           };
           console.log(allQuestion);
-          const res = await axios.post(`${BASE_URL}/post/5`, allQuestion, {
+          const res = await axios.post(`${BASE_URL}/post/2`, allQuestion, {
             headers: { "Content-Type": "application/json" },
           });
           const data = res.data;

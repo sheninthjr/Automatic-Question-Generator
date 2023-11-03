@@ -53,7 +53,7 @@ export function Post(props: {
         />
         <div className="flex justify-around space-x-2">
           <div className="flex justify-between space-x-2">
-            <label className="text-lg text-blue-800">Type:</label>
+            <label className="text-lg text-white">Type:</label>
             <select
               name="qtype"
               id="type"
@@ -69,7 +69,7 @@ export function Post(props: {
             </select>
           </div>
           <div className="flex justify-between space-x-2">
-            <label className="text-lg text-blue-800">Cource Outcome:</label>
+            <label className="text-lg text-white">Cource Outcome:</label>
             <select
               name="cotype"
               id="cotype"
@@ -97,7 +97,7 @@ export function Post(props: {
         />
         <div className="flex justify-around space-x-2">
           <div className="flex justify-between space-x-2">
-            <label className="text-lg text-blue-800">Type:</label>
+            <label className="text-lg text-white">Type:</label>
             <select
               name="qtype"
               id="type"
@@ -113,7 +113,7 @@ export function Post(props: {
             </select>
           </div>
           <div className="flex justify-between space-x-2">
-            <label className="text-lg text-blue-800">Cource Outcome:</label>
+            <label className="text-lg text-white">Cource Outcome:</label>
             <select
               name="cotype"
               id="cotype"
@@ -140,7 +140,7 @@ export function Post(props: {
         />
         <div className="flex justify-around space-x-2">
           <div className="flex justify-between space-x-2">
-            <label className="text-lg text-blue-800">Type:</label>
+            <label className="text-lg text-white">Type:</label>
             <select
               name="qtype"
               id="type"
@@ -156,7 +156,7 @@ export function Post(props: {
             </select>
           </div>
           <div className="flex justify-between space-x-2">
-            <label className="text-lg text-blue-800">Cource Outcome:</label>
+            <label className="text-lg text-white">Cource Outcome:</label>
             <select
               name="cotype"
               id="cotype"
@@ -183,7 +183,7 @@ export function Post(props: {
         />
         <div className="flex justify-around space-x-2">
           <div className="flex justify-between space-x-2">
-            <label className="text-lg text-blue-800">Type:</label>
+            <label className="text-lg text-white">Type:</label>
             <select
               name="qtype"
               id="qtype"
@@ -199,7 +199,7 @@ export function Post(props: {
             </select>
           </div>
           <div className="flex justify-between space-x-2">
-            <label className="text-lg text-blue-800">Cource Outcome:</label>
+            <label className="text-lg text-white">Cource Outcome:</label>
             <select
               name="cotype"
               id="cotype"
@@ -226,7 +226,7 @@ export function Post(props: {
         />
         <div className="flex justify-around space-x-2">
           <div className="flex justify-between space-x-2">
-            <label className="text-lg text-blue-800">Type:</label>
+            <label className="text-lg text-white">Type:</label>
             <select
               name="qtype"
               id="type"
@@ -242,7 +242,7 @@ export function Post(props: {
             </select>
           </div>
           <div className="flex justify-between space-x-2">
-            <label className="text-lg text-blue-800">Cource Outcome:</label>
+            <label className="text-lg text-white">Cource Outcome:</label>
             <select
               name="cotype"
               id="cotype"
@@ -269,7 +269,7 @@ export function Post(props: {
         />
         <div className="flex justify-around space-x-2">
           <div className="flex justify-between space-x-2">
-            <label className="text-lg text-blue-800">Type:</label>
+            <label className="text-lg text-white">Type:</label>
             <select
               name="qtype"
               id="type"
@@ -285,7 +285,7 @@ export function Post(props: {
             </select>
           </div>
           <div className="flex justify-between space-x-2">
-            <label className="text-lg text-blue-800">Cource Outcome:</label>
+            <label className="text-lg text-white">Cource Outcome:</label>
             <select
               name="qtype"
               id="type"

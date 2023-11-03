@@ -1,9 +1,9 @@
-
+import { LandingPage } from "ui";
 
 export default function Landing(){
     return(
         <>
-        hi there
+        <LandingPage/>
         </>
     )
 }

@@ -1,3 +1,3 @@
 // component exports
 export { Card } from "./card";
-export { Post } from "./src/components"
+export { Post,GetQuestionPage,LandingPage } from "./src/components"
