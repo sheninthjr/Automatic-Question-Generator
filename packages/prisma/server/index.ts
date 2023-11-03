@@ -8,6 +8,18 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+interface Question1 {
+  parta1: string;
+  parta1qtype: string;
+  parta1co: string;
+}
+
+interface Question2 {
+  parta2: string;
+  parta2qtype: string;
+  parta2co: string;
+}
+
 const unit: { [key: string]: any } = {
   "1": prisma.unit1,
   "2": prisma.unit2,
@@ -158,15 +170,15 @@ app.get("/get/:testtype", async (req, res) => {
           partC1Questions,
           currentDate:formattedDate
       };
-      const htmlDataParta1 = partA11Questions.map((q) => q.parta1);
-      const htmlDataParta1Qtype = partA11Questions.map((q) => q.parta1qtype);
-      const htmlDataParta1Co = partA11Questions.map((q) => q.parta1co);
-      const htmlDataParta11 = partA12Questions.map((q) => q.parta2);
-      const htmlDataParta11Qtype = partA12Questions.map((q) => q.parta2qtype);
-      const htmlDataParta11Co = partA12Questions.map((q) => q.parta2co);
-      const htmlDataParta2 = partA21Questions.map((q) => q.parta1);
-      const htmlDataParta2Qtype = partA21Questions.map((q) => q.parta1qtype);
-      const htmlDataParta2Co = partA21Questions.map((q) => q.parta1co);
+      const htmlDataParta1 = partA11Questions.map((q:Question1) => q.parta1);
+      const htmlDataParta1Qtype = partA11Questions.map((q:Question1) => q.parta1qtype);
+      const htmlDataParta1Co = partA11Questions.map((q:Question1) => q.parta1co);
+      const htmlDataParta11 = partA12Questions.map((q:Question2) => q.parta2);
+      const htmlDataParta11Qtype = partA12Questions.map((q:Question2) => q.parta2qtype);
+      const htmlDataParta11Co = partA12Questions.map((q:Question2) => q.parta2co);
+      const htmlDataParta2 = partA21Questions.map((q:Question1) => q.parta1);
+      const htmlDataParta2Qtype = partA21Questions.map((q:Question1) => q.parta1qtype);
+      const htmlDataParta2Co = partA21Questions.map((q:Question1) => q.parta1co);
       const htmlContent = `
       <html>
         <head>
