@@ -34,5 +34,4 @@ yarn-error.log*
 
 # vercel
 .vercel
-deploy.sh
 sheninth-qpg.pem
