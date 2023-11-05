@@ -42,16 +42,16 @@ export function Post(props: {
   const [partc2co, setPartc2co] = useState("CO1");
 
   return (
-    <div className="space-y-4 p-5">
+    <div className="space-y-4 pt-35 m-10">
       <div className="flex justify-between items-center space-x-2">
         <input
-          className="w-3/4 h-10 text-lg bg-gray-50 rounded-lg p-6 border-2 border-red-200 hover:border-blue-500 focus:outline-none focus:shadow-outline"
+          className="w-3/4 h-10 text-lg bg-gray-50 rounded-lg p-6 border-2 border-box hover:border-blue-500 focus:outline-none focus:shadow-outline"
           type="text"
           placeholder="PART A 1"
           value={parta1}
           onChange={(e) => setParta1(e.target.value)}
         />
-        <div className="flex justify-around space-x-2">
+        <div className="flex justify-around space-x-2 items-center">
           <div className="flex justify-between space-x-2">
             <label className="text-lg text-white">Type:</label>
             <select
@@ -89,13 +89,13 @@ export function Post(props: {
 
       <div className="flex justify-between">
         <input
-          className="w-3/4 h-10 text-lg bg-gray-50 rounded-lg p-6 border-2 border-red-200 hover:border-blue-500 focus:outline-none focus:shadow-outline"
+          className="w-3/4 h-10 text-lg bg-gray-50 rounded-lg p-6 border-2 border-box hover:border-blue-500 focus:outline-none focus:shadow-outline"
           type="text"
           placeholder="PART A 2"
           value={parta2}
           onChange={(e) => setParta2(e.target.value)}
         />
-        <div className="flex justify-around space-x-2">
+        <div className="flex justify-around space-x-2 items-center">
           <div className="flex justify-between space-x-2">
             <label className="text-lg text-white">Type:</label>
             <select
@@ -132,13 +132,13 @@ export function Post(props: {
       </div>
       <div className="flex justify-between">
         <input
-          className="w-3/4 h-10 text-lg bg-gray-50 rounded-lg p-6 border-2 border-red-200 hover:border-blue-500 focus:outline-none focus:shadow-outline"
+          className="w-3/4 h-10 text-lg bg-gray-50 rounded-lg p-6 border-2 border-box hover:border-blue-500 focus:outline-none focus:shadow-outline"
           type="text"
           placeholder="PART B 1"
           value={partb1}
           onChange={(e) => setPartb1(e.target.value)}
         />
-        <div className="flex justify-around space-x-2">
+        <div className="flex justify-around space-x-2 items-center">
           <div className="flex justify-between space-x-2">
             <label className="text-lg text-white">Type:</label>
             <select
@@ -175,13 +175,13 @@ export function Post(props: {
       </div>
       <div className="flex justify-between">
         <input
-          className="w-3/4 h-10 text-lg bg-gray-50 rounded-lg p-6 border-2 border-red-200 hover:border-blue-500 focus:outline-none focus:shadow-outline"
+          className="w-3/4 h-10 text-lg bg-gray-50 rounded-lg p-6 border-2 border-box hover:border-blue-500 focus:outline-none focus:shadow-outline"
           type="text"
           placeholder="PART B 2"
           value={partb2}
           onChange={(e) => setPartb2(e.target.value)}
         />
-        <div className="flex justify-around space-x-2">
+        <div className="flex justify-around space-x-2 items-center">
           <div className="flex justify-between space-x-2">
             <label className="text-lg text-white">Type:</label>
             <select
@@ -218,13 +218,13 @@ export function Post(props: {
       </div>
       <div className="flex justify-between">
         <input
-          className="w-3/4 h-10 text-lg bg-gray-50 rounded-lg p-6 border-2 border-red-200 hover:border-blue-500 focus:outline-none focus:shadow-outline"
+          className="w-3/4 h-10 text-lg bg-gray-50 rounded-lg p-6 border-2 border-box hover:border-blue-500 focus:outline-none focus:shadow-outline"
           type="text"
           placeholder="PART C 1"
           value={partc1}
           onChange={(e) => setPartc1(e.target.value)}
         />
-        <div className="flex justify-around space-x-2">
+        <div className="flex justify-around space-x-2 items-center">
           <div className="flex justify-between space-x-2">
             <label className="text-lg text-white">Type:</label>
             <select
@@ -261,13 +261,13 @@ export function Post(props: {
       </div>
       <div className="flex justify-between">
         <input
-          className="w-3/4 h-10 text-lg bg-gray-50 rounded-lg p-6 border-2 border-red-200 hover:border-blue-500 focus:outline-none focus:shadow-outline"
+          className="w-3/4 h-10 text-lg bg-gray-50 rounded-lg p-6 border-2 border-box hover:border-blue-500 focus:outline-none focus:shadow-outline"
           type="text"
           placeholder="PART C 2"
           value={partc2}
           onChange={(e) => setPartc2(e.target.value)}
         />
-        <div className="flex justify-around space-x-2">
+        <div className="flex justify-around space-x-2 items-center">
           <div className="flex justify-between space-x-2">
             <label className="text-lg text-white">Type:</label>
             <select
@@ -302,10 +302,10 @@ export function Post(props: {
           </div>
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-end ">
         <button
           type="submit"
-          className=" flex justify-end items-center align w-15 h-10 text-lg bg-gray-50 rounded-lg p-6 border-2 border-red-200 hover:border-blue-500 focus:outline-none focus:shadow-outline"
+          className=" flex justify-end items-center align w-15 h-10 text-lg bg-gray-50 rounded-lg p-6 border-2 border-box hover:border-blue-500 focus:outline-none focus:shadow-outline"
           onClick={async () => {
             props.onClick(
               parta1,

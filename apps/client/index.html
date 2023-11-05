@@ -5,8 +5,20 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React + TS</title>
+    <style>
+      :root {
+        --background-gradient: linear-gradient(315deg, #2b4162 0%, #12100e 74%);
+      }
+
+      body {
+        background: var(--background-gradient), #2b4162;
+        background-size: 100%;
+        background-attachment: fixed;
+        background-color: #2b4162;
+      }
+    </style>
   </head>
-  <body class="h-screen bg-gray-700">
+  <body class="h-screen">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

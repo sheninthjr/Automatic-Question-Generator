@@ -96,7 +96,7 @@ app.get("/get/:testtype", async (req, res) => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     if (testType === "IA1") {
-      const skipNo = 3;
+      const skipNo = 4;
       const partA11Questions = await prisma.unit1.findMany({
         skip: Math.floor(Math.random() * skipNo),
         select: {

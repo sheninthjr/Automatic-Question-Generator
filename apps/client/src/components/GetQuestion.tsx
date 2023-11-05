@@ -30,10 +30,10 @@ export default function GetQuestion() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center p-40 bg-gray-700">
-      <div className="flex flex-col justify-between space-y-5 p-4 border-4 h-[30vh] bg-blue-300 border-blue-300">
+    <div className="flex flex-col justify-center items-center p-40">
+      <div className="flex flex-col justify-between rounded-lg space-y-5 p-4 border-4 h-[30vh] bg-white border-white w-80 sm:w-50 md:h-[50vh] w-100 lg:h-[50vh]">
         <input
-          className="rounded-lg w-1/25 h-15 p-4"
+          className="rounded-lg w-1/25 h-15 p-4 border-2 border-gray-700"
           type="text"
           value={pdfName}
           placeholder="Pdf Name"
@@ -42,7 +42,7 @@ export default function GetQuestion() {
         <div className="flex justify-between">
           {showPdf && (
             <a
-              className="text-white"
+              className="text-blue-600"
               href={pdfUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -52,7 +52,7 @@ export default function GetQuestion() {
             </a>
           )}
           <a
-            className="text-white"
+            className="text-red-700"
             href={pdfUrl}
             download={`${pdfName}.pdf`}
             onClick={refreshData}

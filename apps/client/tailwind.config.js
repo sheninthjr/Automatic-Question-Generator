@@ -7,7 +7,14 @@ export default {
     './src/**/*.{html,ts}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        "box":"#2b4162"
+      },
+      spacing: {
+        '35': '5.6rem', 
+      },
+    },
   },
   plugins: [],
 }
