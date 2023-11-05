@@ -38,18 +38,30 @@ model Unit1 {
   parta2      String @unique
   parta2qtype QType
   parta2co    CO
-  partb1      String @unique
-  partb1qtype QType
-  partb1co    CO
-  partb2      String @unique
-  partb2qtype QType
-  partb2co    CO
-  partc1      String @unique
-  partc1qtype QType
-  partc1co    CO
-  partc2      String @unique
-  partc2qtype QType
-  partc2co    CO
+  partb1a      String @unique
+  partb1aqtype QType
+  partb1aco    CO
+  partb1b      String @unique
+  partb1bqtype QType
+  partb1bco    CO
+  partb2a      String @unique
+  partb2aqtype QType
+  partb2aco    CO
+  partb2b      String @unique
+  partb2bqtype QType
+  partb2bco    CO
+  partc1a      String @unique
+  partc1aqtype QType
+  partc1aco    CO
+  partc1b      String @unique
+  partc1bqtype QType
+  partc1bco    CO
+  partc2a      String @unique
+  partc2aqtype QType
+  partc2aco    CO
+  partc2b      String @unique
+  partc2bqtype QType
+  partc2bco    CO
 }
 
 model Unit2 {
@@ -60,18 +72,30 @@ model Unit2 {
   parta2      String @unique
   parta2qtype QType
   parta2co    CO
-  partb1      String @unique
-  partb1qtype QType
-  partb1co    CO
-  partb2      String @unique
-  partb2qtype QType
-  partb2co    CO
-  partc1      String @unique
-  partc1qtype QType
-  partc1co    CO
-  partc2      String @unique
-  partc2qtype QType
-  partc2co    CO
+  partb1a      String @unique
+  partb1aqtype QType
+  partb1aco    CO
+  partb1b      String @unique
+  partb1bqtype QType
+  partb1bco    CO
+  partb2a      String @unique
+  partb2aqtype QType
+  partb2aco    CO
+  partb2b      String @unique
+  partb2bqtype QType
+  partb2bco    CO
+  partc1a      String @unique
+  partc1aqtype QType
+  partc1aco    CO
+  partc1b      String @unique
+  partc1bqtype QType
+  partc1bco    CO
+  partc2a      String @unique
+  partc2aqtype QType
+  partc2aco    CO
+  partc2b      String @unique
+  partc2bqtype QType
+  partc2bco    CO
 }
 
 model Unit3 {
@@ -82,18 +106,30 @@ model Unit3 {
   parta2      String @unique
   parta2qtype QType
   parta2co    CO
-  partb1      String @unique
-  partb1qtype QType
-  partb1co    CO
-  partb2      String @unique
-  partb2qtype QType
-  partb2co    CO
-  partc1      String @unique
-  partc1qtype QType
-  partc1co    CO
-  partc2      String @unique
-  partc2qtype QType
-  partc2co    CO
+  partb1a      String @unique
+  partb1aqtype QType
+  partb1aco    CO
+  partb1b      String @unique
+  partb1bqtype QType
+  partb1bco    CO
+  partb2a      String @unique
+  partb2aqtype QType
+  partb2aco    CO
+  partb2b      String @unique
+  partb2bqtype QType
+  partb2bco    CO
+  partc1a      String @unique
+  partc1aqtype QType
+  partc1aco    CO
+  partc1b      String @unique
+  partc1bqtype QType
+  partc1bco    CO
+  partc2a      String @unique
+  partc2aqtype QType
+  partc2aco    CO
+  partc2b      String @unique
+  partc2bqtype QType
+  partc2bco    CO
 }
 
 model Unit4 {
@@ -104,18 +140,30 @@ model Unit4 {
   parta2      String @unique
   parta2qtype QType
   parta2co    CO
-  partb1      String @unique
-  partb1qtype QType
-  partb1co    CO
-  partb2      String @unique
-  partb2qtype QType
-  partb2co    CO
-  partc1      String @unique
-  partc1qtype QType
-  partc1co    CO
-  partc2      String @unique
-  partc2qtype QType
-  partc2co    CO
+  partb1a      String @unique
+  partb1aqtype QType
+  partb1aco    CO
+  partb1b      String @unique
+  partb1bqtype QType
+  partb1bco    CO
+  partb2a      String @unique
+  partb2aqtype QType
+  partb2aco    CO
+  partb2b      String @unique
+  partb2bqtype QType
+  partb2bco    CO
+  partc1a      String @unique
+  partc1aqtype QType
+  partc1aco    CO
+  partc1b      String @unique
+  partc1bqtype QType
+  partc1bco    CO
+  partc2a      String @unique
+  partc2aqtype QType
+  partc2aco    CO
+  partc2b      String @unique
+  partc2bqtype QType
+  partc2bco    CO
 }
 
 model Unit5 {
@@ -126,16 +174,28 @@ model Unit5 {
   parta2      String @unique
   parta2qtype QType
   parta2co    CO
-  partb1      String @unique
-  partb1qtype QType
-  partb1co    CO
-  partb2      String @unique
-  partb2qtype QType
-  partb2co    CO
-  partc1      String @unique
-  partc1qtype QType
-  partc1co    CO
-  partc2      String @unique
-  partc2qtype QType
-  partc2co    CO
+  partb1a      String @unique
+  partb1aqtype QType
+  partb1aco    CO
+  partb1b      String @unique
+  partb1bqtype QType
+  partb1bco    CO
+  partb2a      String @unique
+  partb2aqtype QType
+  partb2aco    CO
+  partb2b      String @unique
+  partb2bqtype QType
+  partb2bco    CO
+  partc1a      String @unique
+  partc1aqtype QType
+  partc1aco    CO
+  partc1b      String @unique
+  partc1bqtype QType
+  partc1bco    CO
+  partc2a      String @unique
+  partc2aqtype QType
+  partc2aco    CO
+  partc2b      String @unique
+  partc2bqtype QType
+  partc2bco    CO
 }

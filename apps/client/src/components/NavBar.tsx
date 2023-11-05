@@ -41,7 +41,7 @@ export default function NavBar() {
               </a>
             </li>
             <li>
-              <div className="flex items-center space-x-2">
+              <div className="items-center space-x-2 hidden sm:flex">
                 <Link
                   to="https://github.com/sheninthjr/Automatic-Question-Generator"
                   target="_blank"
