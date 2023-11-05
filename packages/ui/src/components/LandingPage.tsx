@@ -4,13 +4,15 @@ export function LandingPage() {
   return (
     <div className="mt-40 text-white relative z-10 flex">
       <div className="w-2/3 p-4">
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-10">
           <div className="text-5xl italic">
             <h1>Automatic Question Paper Generator</h1>
           </div>
           <div className="text-xl italic space-y-4">
-            <p>Upload the Question</p>
-            <p>Whenever needed, it will be automatically generated</p>
+            <p>This project is a sophisticated and practical solution designed to streamline and simplify</p>
+            <p>the process of creating customized question papers for educational institutions.</p>
+            <p>This project aims to provide a user-friendly platform for generating diverse</p>
+            <p>and tailored sets of questions efficiently.</p>
           </div>
         </div>
       </div>

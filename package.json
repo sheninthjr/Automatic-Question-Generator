@@ -1,28 +1,29 @@
 {
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "start:express": "cd packages/prisma && yarn prisma migrate dev && yarn yarn prisma generate && sudo docker-compose up -d  && node dist/index.js",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
-  },
-  "devDependencies": {
-    "eslint": "^8.48.0",
-    "prettier": "^3.0.3",
-    "tsconfig": "*",
-    "turbo": "latest"
-  },
-  "name": "QG",
-  "packageManager": "yarn@1.22.19",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
-  "dependencies": {
-    "@types/cors": "^2.8.15",
-    "@types/express": "^4.17.20",
-    "cors": "^2.8.5",
-    "express": "^4.18.2"
+    "private": true,
+    "scripts": {
+      "build": "turbo run build",
+      "dev": "turbo run dev",
+      "lint": "turbo run lint",
+      "start:react": "cd apps/client-react/dist && serve -p 3001",
+      "start:express": "cd packages/prisma && sudo docker-compose up -d  && yarn prisma migrate dev && yarn prisma generate && node dist/index.js",
+      "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    },
+    "devDependencies": {
+      "eslint": "^8.48.0",
+      "prettier": "^3.0.3",
+      "tsconfig": "*",
+      "turbo": "latest"
+    },
+    "name": "QG",
+    "packageManager": "yarn@1.22.19",
+    "workspaces": [
+      "apps/*",
+      "packages/*"
+    ],
+    "dependencies": {
+      "@types/cors": "^2.8.15",
+      "@types/express": "^4.17.20",
+      "cors": "^2.8.5",
+      "express": "^4.18.2"
+    }
   }
-}

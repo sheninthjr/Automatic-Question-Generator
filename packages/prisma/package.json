@@ -12,7 +12,7 @@
     "prisma:push": "prisma db push --skip-generate",
     "prisma:seed": "prisma db seed",
     "prisma:deploy": "prisma migrate deploy",
-    "build": "esbuild ./src/index.js --bundle --platform=node --outfile=dist/index.js",
+    "build": "esbuild ./server/index.js --bundle --platform=node --outfile=dist/index.js",
     "dev": "tsc -b && node dist/index.js",
     "all":"yarn prisma migrate dev && yarn prisma generate && sudo docker-compose up -d && tsc -b && node dist/index.js",
     "start": "node dist/index.js",
