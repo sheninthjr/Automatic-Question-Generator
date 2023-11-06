@@ -11,7 +11,7 @@ export function TypePost(props: {
   return (
     <>
       <div className="flex flex-col justify-center items-center p-40">
-        <div className="flex flex-col rounded-lg space-y-5 p-4 border-4 bg-white border-white w-80 h-[55vh] w-100 lg:h-[55vh]">
+        <div className="flex flex-col rounded-lg space-y-5 p-4 border-4 bg-white border-white w-80 w-100 lg:h-[55vh]">
           <input
             className="rounded-lg w-1/25 h-15 p-4 border-2 border-gray-700"
             type="date"
