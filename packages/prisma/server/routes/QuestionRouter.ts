@@ -95,10 +95,18 @@ router.get("/get/:testtype", async (req, res) => {
   const sem = req.query.sem;
   const year = req.query.year;
   const set = req.query.setTypeA;
+  function reverseDate(inputDate) {
+    const dateComponents = inputDate.split('-'); 
+    const reversedDate = dateComponents.reverse().join('-');
+    return reversedDate;
+  }
+  const inputDate = date;
+  const rDate = reverseDate(inputDate);
   try {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     if (testType === "IA1") {
+      console.log(testType)
       const skipNo = 4;
       const partA11Questions = await prisma.unit1.findMany({
         skip: Math.floor(Math.random() * skipNo),
@@ -247,7 +255,7 @@ router.get("/get/:testtype", async (req, res) => {
             <h3>Velammal Institute of technology</h3>
           </div>
           <div>
-            <h3>Dept of AI&DS/${testType}/${year}/${sem}/${date}/1.45hr/60Marks/${set}</h3>
+            <h3>Dept of AI&DS/${testType}/${year}/${sem}/${rDate}/1.45hr/60Marks/${set}</h3>
           </div>
           <div>
             <h3>CCS334-BIG DATA ANALYTICS</h3>

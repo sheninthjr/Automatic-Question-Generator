@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useLocation, useParams } from "react-router";
 
 export default function GetQuestion() {
-  const { type } = useParams();
+  const { testType } = useParams();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const date = searchParams.get("date");
@@ -15,9 +15,10 @@ export default function GetQuestion() {
   const [pdfUrl, setPdfUrl] = useState("");
   const [showPdf, setShowPdf] = useState(false);
 
+
   const fetchPdf = async () => {
     try {
-      const res = await axios.get(`${BASE_URL}/get/${type}?date=${date}&sem=${sem}&year=${year}&setTypeA=${setTypeA}`, {
+      const res = await axios.get(`${BASE_URL}/get/${testType}?date=${date}&sem=${sem}&year=${year}&setTypeA=${setTypeA}`, {
         responseType: "blob",
       });
       const blob = new Blob([res.data], { type: "application/pdf" });
@@ -36,7 +37,6 @@ export default function GetQuestion() {
   const refreshData = () => {
     fetchPdf();
   };
-
   return (
     <div className="flex flex-col justify-center items-center p-40">
       <div className="flex flex-col justify-between rounded-lg space-y-5 p-4 border-4 h-[30vh] bg-white border-white w-80 sm:w-50 md:h-[50vh] w-100 lg:h-[50vh]">

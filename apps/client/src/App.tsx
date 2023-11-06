@@ -14,7 +14,7 @@ function App() {
           <Route path="/" element={<Landing/>}></Route>
           <Route path="/post" element={<PostingQuestion />}></Route>
           <Route path="/get" element={<TestType />}></Route>
-          <Route path="/get/:testtype" element={<GetQuestion />}></Route>
+          <Route path="/get/:testType" element={<GetQuestion />}></Route>
         </Routes>
       </Router>
     </>

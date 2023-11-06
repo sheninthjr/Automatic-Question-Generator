@@ -1,27 +1,29 @@
 
 import { TypePost } from "ui";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function TestType() {
+  const navigate = useNavigate()
   return (
     <>
       <TypePost
         onClick={async (
           date: string,
-          type: string,
+          testType: string,
           year: string,
           sem: string,
           setTypeA:string
         ) => {
           const urlData = {
             date,
-            type,
+            testType,
             year,
             sem,
+            setTypeA
           };
-          return (
-            <Link to={{pathname:`/get/${urlData.type}`,search:`?date=${date}&sem=${sem}&year=${year}&setTypeA=${setTypeA}`}} ></Link>
-          ) 
+          if(urlData.testType){
+            navigate(`/get/${testType}?date=${date}&sem=${sem}&year=${year}&setTypeA=${setTypeA}`)
+          }
         }}
       />
     </>

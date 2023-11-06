@@ -4,10 +4,10 @@ export function TypePost(props: {
   onClick: (date: string, type: string, year: string, sem: string,setTypeA:string) => void;
 }) {
   const [date, setDate] = useState("");
-  const [type, setType] = useState("");
-  const [year, setYear] = useState("");
-  const [sem, setSem] = useState("");
-  const [setTypeA,setSetTypeA] = useState("")
+  const [testType, setTestType] = useState("IA1");
+  const [year, setYear] = useState("I Year");
+  const [sem, setSem] = useState("I Sem");
+  const [setTypeA,setSetTypeA] = useState("Set A")
   return (
     <>
       <div className="flex flex-col justify-center items-center p-40">
@@ -24,8 +24,8 @@ export function TypePost(props: {
           <select
             className="rounded-lg border-2 border-gray-700 h-15 p-4 bg-white"
             name="Type of Exam"
-            value={type}
-            onChange={(e) => setType(e.target.value)}
+            value={testType}
+            onChange={(e) => setTestType(e.target.value)}
           >
             <option value="IA1">IA1</option>
             <option value="IA2">IA2</option>
@@ -75,7 +75,7 @@ export function TypePost(props: {
             <button
               className="flex justify-center items-center rounded-lg border-2 border-red-600 h-5 p-4 bg-white"
               onClick={async () => {
-                props.onClick(date, type, year, sem,setTypeA);
+                props.onClick(date, testType, year, sem,setTypeA);
               }}
             >
               Submit
