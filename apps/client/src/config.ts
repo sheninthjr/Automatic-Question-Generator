@@ -1,1 +1,1 @@
-export const BASE_URL = "https://generator.sheninthjr.com"
+export const BASE_URL = "http://localhost:3000"

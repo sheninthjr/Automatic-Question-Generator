@@ -3,6 +3,7 @@ import PostingQuestion from "./components/Posting";
 import Landing from "./components/Landing";
 import GetQuestion from "./components/GetQuestion";
 import NavBar from "./components/NavBar";
+import TestType from "./components/TestType";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing/>}></Route>
           <Route path="/post" element={<PostingQuestion />}></Route>
-          <Route path="/get" element={<GetQuestion />}></Route>
+          <Route path="/get" element={<TestType />}></Route>
+          <Route path="/get/:testtype" element={<GetQuestion />}></Route>
         </Routes>
       </Router>
     </>

@@ -91,13 +91,10 @@ router.post("/post/:unit", async (req, res) => {
 
 router.get("/get/:testtype", async (req, res) => {
   const testType = req.params.testtype;
-  const currentDate = new Date();
-  const currentYear = currentDate.getFullYear() % 100;
-  const currentMonth = currentDate.getMonth() + 1;
-  const currentDay = currentDate.getDate();
-  const formattedMonth = currentMonth < 10 ? `0${currentMonth}` : currentMonth;
-  const formattedDay = currentDay < 10 ? `0${currentDay}` : currentDay;
-  const formattedDate = `${formattedDay}.${formattedMonth}.${currentYear}`;
+  const date = req.query.date;
+  const sem = req.query.sem;
+  const year = req.query.year;
+  const set = req.query.setTypeA;
   try {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
@@ -186,7 +183,7 @@ router.get("/get/:testtype", async (req, res) => {
         partB12Questions,
         partB21Questions,
         partC1Questions,
-        currentDate: formattedDate,
+        currentDate: date,
       };
       const htmlDataParta1 = partA11Questions.map((q) => q.parta1);
       const htmlDataParta1Qtype = partA11Questions.map((q) => q.parta1qtype);
@@ -250,7 +247,7 @@ router.get("/get/:testtype", async (req, res) => {
             <h3>Velammal Institute of technology</h3>
           </div>
           <div>
-            <h3>Dept of AI&DS/${testType}/III Year/V Sem/${formattedDate}/1.45hr/60Marks/Set B</h3>
+            <h3>Dept of AI&DS/${testType}/${year}/${sem}/${date}/1.45hr/60Marks/${set}</h3>
           </div>
           <div>
             <h3>CCS334-BIG DATA ANALYTICS</h3>

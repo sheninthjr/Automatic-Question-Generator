@@ -505,7 +505,7 @@
     picocolors "^1.0.0"
     tslib "^2.6.0"
 
-"@prisma/client@5.5.2", "@prisma/client@^5.5.2":
+"@prisma/client@^5.5.2":
   version "5.5.2"
   resolved "https://registry.yarnpkg.com/@prisma/client/-/client-5.5.2.tgz#ce6389e7ad9e9cf0fc2a7c6a0032ad2e12a9fd61"
   integrity sha512-54XkqR8M+fxbzYqe+bIXimYnkkcGqgOh0dn0yWtIk6CQT4IUCAvNFNcQZwk2KqaLU+/1PHTSWrcHtx4XjluR5w==

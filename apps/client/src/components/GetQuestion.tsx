@@ -1,15 +1,23 @@
 import axios from "axios";
 import { BASE_URL } from "../config";
 import { useState, useEffect } from "react";
+import { useLocation, useParams } from "react-router";
 
 export default function GetQuestion() {
+  const { type } = useParams();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const date = searchParams.get("date");
+  const sem = searchParams.get("sem");
+  const year = searchParams.get("year");
+  const setTypeA = searchParams.get("setTypeA");
   const [pdfName, setPdfName] = useState("");
   const [pdfUrl, setPdfUrl] = useState("");
   const [showPdf, setShowPdf] = useState(false);
 
   const fetchPdf = async () => {
     try {
-      const res = await axios.get(`${BASE_URL}/get/IA1`, {
+      const res = await axios.get(`${BASE_URL}/get/${type}?date=${date}&sem=${sem}&year=${year}&setTypeA=${setTypeA}`, {
         responseType: "blob",
       });
       const blob = new Blob([res.data], { type: "application/pdf" });
