@@ -5,7 +5,7 @@
       "dev": "turbo run dev",
       "lint": "turbo run lint",
       "start:react": "cd apps/client/dist && serve -p 3001",
-      "start:express": "cd packages/prisma && sudo docker-compose up -d  && yarn prisma migrate dev && yarn prisma generate && pm2 kill && pm2 start node dist/index.js",
+      "start:express": "cd packages/prisma && sudo docker-compose up -d  && yarn prisma migrate dev && yarn prisma generate && pm2 kill && yarn build && pm2 start node dist/index.js",
       "format": "prettier --write \"**/*.{ts,tsx,md}\""
     },
     "devDependencies": {
